@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DiscordBot_Dragon.bot
+namespace DiscordBot_Dragon
 {
     public class Bot
     {
