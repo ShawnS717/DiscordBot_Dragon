@@ -1,4 +1,4 @@
-﻿using DiscordBot_Dragon.bot;
+﻿using DiscordBot_Dragon.lib;
 using System;
 
 namespace DiscordBot_Dragon
@@ -7,10 +7,17 @@ namespace DiscordBot_Dragon
     {
         static void Main(string[] args)
         {
-            var config = new ConfigSettings("","%");
+            //temporary config settings
+            var config = new ConfigSettings(
+                token: "NjkzMjQzMTA3NjY3MzQ1NDYw.Xn6O9A.0pXsNfd4ETGbwTxwEtjI_G-SVTA",
+                prefix: "%",
+                autoReconnect: true,
+                commandsAreCaseSensitive: false,
+                dmHelp: false,
+                enableMentionPrefix: true);
 
-            var bot = new Bot();
-            Console.WriteLine("Hello World!");
+            var bot = new Bot(config);
+            bot.RunAsync().GetAwaiter().GetResult();
         }
     }
 }
