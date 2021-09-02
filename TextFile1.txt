@@ -1,0 +1,12 @@
+﻿Requirements:
+1)give a ping to people (@everyone) when given a command
+	ping will look like (for example):
+@[F.C.]  on Op: @Dragon 
+Fleet Name: FC What Pew?
+Form Up: Choonka - Spark Of Solitude
+Ships: Assault Frigs | Bulwark Shield & Armour | Tackle
+Comm's: Fleet Op's 1
+Time: 1900 EVE Time
+Fleet Type: PvP
+
+so far that is all in fuctionality that has been requested.
