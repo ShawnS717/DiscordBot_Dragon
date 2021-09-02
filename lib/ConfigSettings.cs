@@ -8,13 +8,28 @@ namespace DiscordBot_Dragon.lib
 {
     public struct ConfigSettings
     {
-        public string Token { get; init; }
-        public string Prefix { get; init; }
+        public string Token { get; internal set; }
+        public string Prefix { get; internal set; }
+        public bool AutoReconnect { get; internal set; }
+        public bool CommandsAreCaseSensitive { get; internal set; }
+        public bool DmHelp { get; internal set; }
+        public bool EnableMentionPrefix { get; internal set; }
 
-        public ConfigSettings(string token, string prefix)
+        public ConfigSettings(
+            string token,
+            string prefix,
+            bool autoReconnect,
+            bool commandsAreCaseSensitive,
+            bool dmHelp,
+            bool enableMentionPrefix
+            )
         {
             Token = token;
             Prefix = prefix;
+            AutoReconnect = autoReconnect;
+            CommandsAreCaseSensitive = commandsAreCaseSensitive;
+            DmHelp = dmHelp;
+            EnableMentionPrefix = enableMentionPrefix;
         }
     }
 }
