@@ -9,4 +9,6 @@ Comm's: Fleet Op's 1
 Time: 1900 EVE Time
 Fleet Type: PvP
 
+only certain people in certain rolls can make a ping and only display a ping in a certain channel
+
 so far that is all in fuctionality that has been requested.
