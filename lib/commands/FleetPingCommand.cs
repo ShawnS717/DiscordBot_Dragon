@@ -44,7 +44,7 @@ namespace DiscordBot_Dragon.lib.commands
                 $"**Time**: {time} Eve time\n" +
                 $"**Fleet Type**: {fleetType}\n" +
                 $"**Ships**: " + string.Join(" | ", ships),
-                Color = DiscordColor.Purple,
+                Color = DiscordColor.HotPink
             };
             await targetChannel.SendMessageAsync("@everyone\n", embed).ConfigureAwait(false);
         }
