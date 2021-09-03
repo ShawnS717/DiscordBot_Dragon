@@ -12,7 +12,7 @@ namespace DiscordBot_Dragon.lib.commands
     public partial class FleetPingCommand: BaseCommandModule
     {
         [Command("createping")]
-        [Description("Will create a discord ping for everyone with the given information. note: ALL ARGUMENTS ARE SPACE SEPERATED. If the argument name has a space in it, just substitute with an underscore")]
+        [Description("Creates a fleet ping for everyone with the provided information. information is entered space separated so if you need a space, use the underscore-> \"_\"")]
         [RequireRoles(RoleCheckMode.Any, "F.C.", "Admins"/*Admins is for testing purposes*/)]//TODO: set to whatever is the fc name
         public async Task CreatePing(
             CommandContext ctx,
@@ -20,7 +20,7 @@ namespace DiscordBot_Dragon.lib.commands
             string fleetName,
             [Description("Where the fleet should form")]
             string formUpOn,
-            [Description("Name of the communication channel (or where participants can find it)")]
+            [Description("Name of the communication channel")]
             string commsName,
             [Description("What time the fleet is starting (in eve time, just the number)")]
             int time,
@@ -38,12 +38,13 @@ namespace DiscordBot_Dragon.lib.commands
             {
                 Title = "Fleet Ping",
                 Description =
-                $"Fleet Name: {fleetName}\n" +
-                $"Form Up: {formUpOn}\n" +
-                $"Comm's: {commsName}\n" +
-                $"Time: {time} Eve time\n" +
-                $"Fleet Type: {fleetType}\n" +
-                $"Ships: \n" + string.Join(" | ", ships)
+                $"**Fleet Name**: {fleetName}\n" +
+                $"**Form Up**: {formUpOn}\n" +
+                $"**Comm's**: {commsName}\n" +
+                $"**Time**: {time} Eve time\n" +
+                $"**Fleet Type**: {fleetType}\n" +
+                $"**Ships**: " + string.Join(" | ", ships),
+                Color = DiscordColor.Purple,
             };
             await targetChannel.SendMessageAsync("@everyone\n", embed).ConfigureAwait(false);
         }
