@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DiscordBot_Dragon.lib.commands
 {
-    public partial class FleetPingCommand: BaseCommandModule
+    public class FleetPingCommand: BaseCommandModule
     {
         [Command("createping")]
         [Description("Creates a fleet ping for everyone with the provided information. information is entered space separated so if you need a space, use the underscore-> \"_\"")]
