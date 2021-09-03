@@ -12,7 +12,7 @@ namespace DiscordBot_Dragon.lib.commands
     public partial class FleetPingCommand: BaseCommandModule
     {
         [Command("createping")]
-        [Description("Will create a discord ping for everyone with the given information")]
+        [Description("Will create a discord ping for everyone with the given information. note: ALL ARGUMENTS ARE SPACE SEPERATED. If the argument name has a space in it, just substitute with an underscore")]
         [RequireRoles(RoleCheckMode.Any, "F.C.", "Admins"/*Admins is for testing purposes*/)]//TODO: set to whatever is the fc name
         public async Task CreatePing(
             CommandContext ctx,
@@ -26,7 +26,7 @@ namespace DiscordBot_Dragon.lib.commands
             string time,
             [Description("Purpose of the fleet. ex:PvP, PvE, etc")]
             string fleetType,
-            [Description("The kinds of ships involved, SPACE SEPERATED. If the ship name has a space in it just substitute with an underscore")]
+            [Description("The kinds of ships involved")]
             params string[] ships)
         {
             string fc = ctx.Member.Nickname;
