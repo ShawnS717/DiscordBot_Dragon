@@ -57,6 +57,7 @@ namespace DiscordBot_Dragon
             Commands = Client.UseCommandsNext(commandsConfig);
             //TODO when commands are created register them
             Commands.RegisterCommands<FleetPingCommand>();
+            Commands.RegisterCommands<FleetPolling>();
 
             Client.Ready += OnReady;
 
