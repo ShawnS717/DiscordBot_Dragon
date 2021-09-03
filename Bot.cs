@@ -1,4 +1,5 @@
 ﻿using DiscordBot_Dragon.lib;
+using DiscordBot_Dragon.lib.commands;
 using DSharpPlus;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.EventArgs;
@@ -54,8 +55,8 @@ namespace DiscordBot_Dragon
             });
 
             Commands = Client.UseCommandsNext(commandsConfig);
-            //when commands are created register them
-            //Commands.RegisterCommands<ClassName>();
+            //TODO when commands are created register them
+            Commands.RegisterCommands<FleetPingCommand>();
 
             Client.Ready += OnReady;
 
