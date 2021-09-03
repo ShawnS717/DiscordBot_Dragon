@@ -22,8 +22,8 @@ namespace DiscordBot_Dragon.lib.commands
             string formUpOn,
             [Description("Name of the communication channel (or where participants can find it)")]
             string commsName,
-            [Description("What time the fleet is starting")]
-            string time,
+            [Description("What time the fleet is starting (in eve time, just the number)")]
+            int time,
             [Description("Purpose of the fleet. ex:PvP, PvE, etc")]
             string fleetType,
             [Description("The kinds of ships involved")]
@@ -38,11 +38,11 @@ namespace DiscordBot_Dragon.lib.commands
             {
                 Title = "Fleet Ping",
                 Description =
-                $"Fleet Name: {0}\n" +
-                $"Form Up: {1}\n" +
-                $"Comm's: {2}\n" +
-                $"Time: {3}\n" +
-                $"Fleet Type: {4}\n" +
+                $"Fleet Name: {fleetName}\n" +
+                $"Form Up: {formUpOn}\n" +
+                $"Comm's: {commsName}\n" +
+                $"Time: {time} Eve time\n" +
+                $"Fleet Type: {fleetType}\n" +
                 $"Ships: \n" + string.Join(" | ", ships)
             };
             await targetChannel.SendMessageAsync("@everyone\n", embed).ConfigureAwait(false);
