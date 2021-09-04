@@ -42,6 +42,7 @@ namespace DiscordBot_Dragon.lib
             content.AppendLine($"DmHelp:{DmHelp}");
             content.AppendLine($"EnableMentionPrefix:{EnableMentionPrefix}");
 
+            Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DiscordBot"));
             File.WriteAllText(FilePath, content.ToString());
         }
 
@@ -52,6 +53,9 @@ namespace DiscordBot_Dragon.lib
 
             foreach(var item in fileContent)
             {
+                if (item == "")
+                    //continue fixes an exception caused by extranious lines
+                    continue;
                 var splitLine = item.Split(":");
                 formatedContent.Add(splitLine[0], splitLine[1]);
             }
