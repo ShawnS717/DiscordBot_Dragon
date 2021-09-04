@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DiscordBot_Dragon.lib
 {
-    public struct ConfigSettings
+    public class ConfigSettings
     {
         public string Token { get; internal set; }
         public string Prefix { get; internal set; }
@@ -15,6 +15,7 @@ namespace DiscordBot_Dragon.lib
         public bool DmHelp { get; internal set; }
         public bool EnableMentionPrefix { get; internal set; }
 
+        public ConfigSettings() { }
         public ConfigSettings(
             string token,
             string prefix,
@@ -30,6 +31,16 @@ namespace DiscordBot_Dragon.lib
             CommandsAreCaseSensitive = commandsAreCaseSensitive;
             DmHelp = dmHelp;
             EnableMentionPrefix = enableMentionPrefix;
+        }
+
+        public void WriteToConfigFile()
+        {
+
+        }
+
+        public void ReadFromConfigFile()
+        {
+
         }
     }
 }
